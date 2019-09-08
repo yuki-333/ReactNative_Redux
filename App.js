@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./reducers";
+import rootReducer from "./src/reducers";
 
 import { Provider } from "react-redux";
 
-import HomeScreen from "./containers/App";
+import App from "./src/containers/App";
 
 import thunk from "redux-thunk";
 
@@ -13,11 +13,11 @@ const middleWares = [thunk];
 
 const store = createStore(rootReducer, applyMiddleware(...middleWares));
 
-export default class App extends React.Component {
+export default class Home extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <HomeScreen />
+        <App />
       </Provider>
     );
   }

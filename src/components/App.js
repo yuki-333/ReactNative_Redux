@@ -9,35 +9,30 @@ import {
   Button,
 } from 'react-native';
 
-import React from "react";
+
 
 const App = ({ number, day, title, plus, minus, asyncMinus }) => (
-  <div>
+  <View>
     <Text>
       {title} {number} {day}
     </Text>
-    <Button
-      onClick={() => {
+    <Button title="+"
+      onPress={() => {
         plus(100);
       }}
-    >
-      10
-    </Button>
-    <Button
-      onClick={() => {
+     />
+    <Button title="-"
+      onPress={() => {
         minus(10);
       }}
-    >
-      -10
-    </Button>
-    <Button
-      onClick={() => {
+    />
+
+    <Button title="async"
+      onPress={() => {
         asyncMinus(10);
       }}
-    >
-      async -10
-    </Button>
-  </div>
+    />
+  </View>
 );
 
 export default App;
